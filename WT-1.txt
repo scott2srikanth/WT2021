@@ -1,0 +1,125 @@
+1. Write a PHP script to print prime numbers between 1-50.
+
+<?php 
+
+$count = 0;
+$n=50;
+for ($i=2;$i<=$n;$i++) {
+    $count=0;
+    for ($j=1;$j<=$i;$j++) {
+        if ($i%$j==0) {
+            $count++;
+        }
+    }
+    if ($count==2) {
+        echo($i.", ");
+    }
+}
+
+?>
+
+
+---------------------------------
+PHP script to
+a. Find the length of a string.
+b. Count no of words in a string.
+c. Reverse a string.
+d. Search for a specific string.
+
+<?php 
+
+$x="keshav memorial institute of technology";
+$searchword="memorial";
+echo "String length is :"."&nbsp&nbsp".strlen($x);
+echo "<br><br>";
+echo "No.of words:" ."&nbsp&nbsp".str_word_count($x);
+echo "<br><br>";
+echo "Reverse String is:" . "&nbsp&nbsp".strrev($x);
+echo "<br><br>";
+//Search for a specific string
+if(strpos($x, $searchword) !== false)
+{
+    echo "Word Found!";
+}
+else
+{
+    echo "Word Not Found!";
+}
+echo "<br><br>";
+//finding string location
+echo "String located at:"."&nbsp&nbsp".strpos($x, $searchword);
+
+?>
+
+-------------------------------------
+Write a PHP script to merge two arrays and sort them as numbers, in
+descending order.
+<?php 
+
+function sortedMerge($array1, $array2)
+{
+    // Concatenate two arrays
+    $result = array();
+    $i = 0; $j = 0; $k = 0;
+    while ($i < count($array1))
+    {
+        $result[$k] = $array1[$i];
+        $i += 1;
+        $k += 1;
+    }
+    while ($j < count($array2))
+    {
+        $result[$k] = $array2[$j];
+        $j += 1;
+        $k += 1;
+    }
+    // sorting the result array in descending order
+    rsort($result);
+    echo "Sorted merged list :";
+    echo "<br>" ;
+    for ($i = 0; $i < count($result); $i++)
+        echo "index"."[".$i."]"."->".$result[$i] . "<br> ";
+}
+
+$array1 = array( 10, 5, 15 );
+$array2 = array( 20, 3, 2, 12 );
+// Final merge list
+sortedMerge($array1, $array2);
+
+?>
+
+----------------------------------------
+
+Write a PHP script that reads data from one file and write into another
+file.
+
+<?php 
+
+echo file_put_contents("test.txt",file_get_contents("all.txt"));
+
+?>
+
+<?php 
+
+$f=file_get_contents("all.txt");
+$f=explode(" ", $f);
+foreach($f as $a){
+ echo $a."<br>";
+}
+//echo file_put_contents("test.txt",file_get_contents("all.txt"));
+
+?>
+
+-------------------------------------
+
+Develop static pages (using Only HTML) of an online Book store. The
+pages should resemble: www.amazon.com.The website should consists the
+following pages.
+a) Home page
+b) Registration and user Login
+c) User Profile Page
+d) Books catalog
+e) Shopping Cart
+f) Payment By credit card
+g) Order Conformation
+
